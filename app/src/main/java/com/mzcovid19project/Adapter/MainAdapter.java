@@ -152,36 +152,30 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ImageViewHolde
                                 break;
 
                             case 14:
-                                Intent applicationtrackerintent = new Intent(Intent.ACTION_VIEW);
-                                applicationtrackerintent.setData(Uri.parse(jsons.getTracker()));
-                                mContext.startActivity(applicationtrackerintent);
-                                break;
-
-                            case 15:
                                 Intent migrantintent = new Intent(Intent.ACTION_VIEW);
                                 migrantintent.setData(Uri.parse(jsons.getMigrant()));
                                 mContext.startActivity(migrantintent);
                                 break;
 
-                            case 16:
+                            case 15:
                                 Intent educationintent = new Intent(mContext, OnlineEducationActivity.class);
                                 educationintent.putExtra("cbse",jsons.getCbse());
                                 educationintent.putExtra("vc",jsons.getVocational_education());
                                 mContext.startActivity(educationintent);
                                 break;
 
-                            case 17:
+                            case 16:
                                 Intent intent20 = new Intent(Intent.ACTION_VIEW);
                                 intent20.setData(Uri.parse(jsons.getGo()));
                                 mContext.startActivity(intent20);
                                 break;
 
-                            case 18:
+                            case 17:
                                 Intent tweetintent = new Intent(mContext, TweetsActivity.class);
                                 tweetintent.putExtra("url", jsons.getTweets());
                                 mContext.startActivity(tweetintent);
                                 break;
-                            case 19:
+                            case 18:
                                 Intent faqintent = new Intent(mContext, FAQsActivity.class);
                                 faqintent.putExtra("url", jsons.getFaq());
                                 mContext.startActivity(faqintent);

@@ -48,7 +48,7 @@ public class HealthCareListAdapter extends RecyclerView.Adapter<HealthCareListAd
 
         holder.District.setText(persons.getDistrict());
         holder.Hospital.setText(persons.getName());
-        holder.Type.setText(persons.getType());
+        holder.Type.setText(persons.getBeds()+" beds");
 
     }
 
@@ -71,7 +71,7 @@ public class HealthCareListAdapter extends RecyclerView.Adapter<HealthCareListAd
 
                         if (row.getDistrict().toLowerCase().contains(charString) ||
                                 row.getName().toLowerCase().contains(charSequence) ||
-                                row.getType().toLowerCase().contains(charSequence)
+                                row.getBeds().toLowerCase().contains(charSequence)
                         ) {
                             filteredList.add(row);
                         }

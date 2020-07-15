@@ -42,11 +42,8 @@ public class TollNumbersAdapter extends RecyclerView.Adapter<TollNumbersAdapter.
 
         final Toll_Numbers test_labs = mToll_Numbers.get(position);
 
-        holder.District.setText(test_labs.getDistrict());
-        holder.Name.setText(test_labs.getName()+", "+test_labs.getDest());
-        holder.Mobile.setText("Mobile Number : "+test_labs.getMobile_number());
-        holder.LandLine.setText("LandLine Number : "+test_labs.getLand_line_number());
-        holder.Phone_number.setText("Phone Number : "+test_labs.getPhone_number());
+        holder.Name.setText(test_labs.getName());
+        holder.Mobile.setText("Phone Number : "+test_labs.getPhone_number());
     }
 
     @Override
@@ -58,15 +55,11 @@ public class TollNumbersAdapter extends RecyclerView.Adapter<TollNumbersAdapter.
 
     public class ImageViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView District, Name, Mobile, LandLine, Phone_number;
+        public TextView Name, Mobile;
         public ImageViewHolder(View itemView) {
             super(itemView);
-
-            District = itemView.findViewById(R.id.district);
             Name = itemView.findViewById(R.id.name);
             Mobile = itemView.findViewById(R.id.mobile_number);
-            LandLine = itemView.findViewById(R.id.land_line_number);
-            Phone_number = itemView.findViewById(R.id.phone_number);
         }
     }
 

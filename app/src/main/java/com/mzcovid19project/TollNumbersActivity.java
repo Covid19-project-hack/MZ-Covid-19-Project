@@ -72,7 +72,7 @@ public class TollNumbersActivity extends AppCompatActivity{
     }
 
     private void parseJSON(String url1) {
-        JsonObjectRequest request = new JsonObjectRequest(url1, null,
+        JsonObjectRequest request = new JsonObjectRequest("https://firebasestorage.googleapis.com/v0/b/mn-covid-19-project.appspot.com/o/toll_numbers.json?alt=media&token=cae15477-21cb-4f8f-9f7d-16d524cf8d11", null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -81,14 +81,10 @@ public class TollNumbersActivity extends AppCompatActivity{
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject hit = jsonArray.getJSONObject(i);
-                                String district = hit.getString("district");
                                 String name = hit.getString("name");
-                                String dest = hit.getString("dest");
-                                String mobile = hit.getString("mobile");
-                                String landline = hit.getString("landline");
-                                String phone_number = hit.getString("control_room");
+                                String phone_number = hit.getString("phone_number");
 
-                                viewItems.add(new Toll_Numbers(district, name, dest, mobile, landline, phone_number));
+                                viewItems.add(new Toll_Numbers(name, phone_number));
                             }
 
                             mAdapter = new TollNumbersAdapter(TollNumbersActivity.this, viewItems);
